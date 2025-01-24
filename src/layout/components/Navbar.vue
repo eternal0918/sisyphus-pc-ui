@@ -2,17 +2,13 @@
   <div class="navbar">
     <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container"
                @toggleClick="toggleSideBar"/>
-
+    <!--    导航栏面包屑-->
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" v-if="!topNav"/>
     <top-nav id="topmenu-container" class="topmenu-container" v-if="topNav"/>
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
         <search id="header-search" class="right-menu-item"/>
-
-<!--        <el-tooltip content="源码地址" effect="dark" placement="bottom">-->
-<!--          <ruo-yi-git id="ruoyi-git" class="right-menu-item hover-effect"/>-->
-<!--        </el-tooltip>-->
 
         <el-tooltip content="文档地址" effect="dark" placement="bottom">
           <ruo-yi-doc id="ruoyi-doc" class="right-menu-item hover-effect"/>
@@ -28,8 +24,9 @@
 
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar" class="user-avatar">
-          <i class="el-icon-caret-bottom"/>
+          <img :src="avatar" class="user-avatar" alt="">
+          <span style="vertical-align: text-bottom;margin-left: 10px;font-size: 15px;font-weight: bold">Sisyphus</span>
+          <!--          <i class="el-icon-caret-bottom"/>-->
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/user/profile">
@@ -113,6 +110,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/styles/variables.scss";
+
 .navbar {
   height: 50px;
   overflow: hidden;
@@ -129,7 +128,8 @@ export default {
     -webkit-tap-highlight-color: transparent;
 
     &:hover {
-      background: rgba(0, 0, 0, .025)
+      background: #F0F0F0;
+      border-radius: 10px;
     }
   }
 
@@ -139,7 +139,7 @@ export default {
 
   .topmenu-container {
     position: absolute;
-    left: 50px;
+    left: 54px;
   }
 
   .errLog-container {
@@ -170,8 +170,14 @@ export default {
         transition: background .3s;
 
         &:hover {
-          background: rgba(0, 0, 0, .025)
+          background: #{$base-hover};
+          border-radius: 10px;
         }
+
+        &:active {
+          background: #{$base-active};
+        }
+
       }
     }
 
@@ -179,14 +185,15 @@ export default {
       margin-right: 30px;
 
       .avatar-wrapper {
-        margin-top: 5px;
+
         position: relative;
 
         .user-avatar {
           cursor: pointer;
           width: 40px;
           height: 40px;
-          border-radius: 10px;
+          border-radius: 50%;
+          border: 2px solid white;
         }
 
         .el-icon-caret-bottom {

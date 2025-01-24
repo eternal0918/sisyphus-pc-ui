@@ -4,7 +4,9 @@
        style="box-shadow: none">
     <logo v-if="showLogo" :collapse="isCollapse"/>
     <el-scrollbar :class="settings.sideTheme" wrap-class="scrollbar-wrapper">
+      <!--    隐藏后的侧边栏-->
       <el-menu
+        style="border-radius: 10px"
         :default-active="activeMenu"
         :collapse="isCollapse"
         :background-color="settings.sideTheme === 'theme-dark' ? variables.menuBackground : variables.menuLightBackground"

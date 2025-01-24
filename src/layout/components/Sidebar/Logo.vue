@@ -60,15 +60,15 @@ export default {
 .sidebar-logo-container {
   position: relative;
   width: 100%;
-  height: 50px;
-  line-height: 50px;
+  height: 90px;
   background: #2b2f3a;
   text-align: center;
   overflow: hidden;
+  line-height: 80px;
 
   & .sidebar-logo-link {
     height: 100%;
-    width: 100%;
+    width: 80%;
 
     & .sidebar-logo {
       width: 32px;
@@ -79,7 +79,7 @@ export default {
 
     & .sidebar-title {
       display: inline-block;
-      margin: 0;
+      margin-right: 20px;
       color: #fff;
       font-weight: 600;
       line-height: 50px;
