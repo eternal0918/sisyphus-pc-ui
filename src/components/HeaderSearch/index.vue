@@ -1,6 +1,6 @@
 <template>
   <div :class="{'show':show}" class="header-search">
-    <svg-icon class-name="search-icon" icon-class="search" @click.stop="click" />
+    <svg-icon class-name="search-icon" icon-class="search" @click.stop="click"/>
     <el-select
       ref="headerSearchSelect"
       v-model="search"
@@ -12,7 +12,8 @@
       class="header-search-select"
       @change="change"
     >
-      <el-option v-for="option in options" :key="option.item.path" :value="option.item" :label="option.item.title.join(' > ')" />
+      <el-option v-for="option in options" :key="option.item.path" :value="option.item"
+                 :label="option.item.title.join(' > ')"/>
     </el-select>
   </div>
 </template>
@@ -22,7 +23,7 @@
 // make search results more in line with expectations
 import Fuse from 'fuse.js/dist/fuse.min.js'
 import path from 'path'
-import { isHttp } from '@/utils/validate'
+import {isHttp} from '@/utils/validate'
 
 export default {
   name: 'HeaderSearch',
@@ -73,13 +74,13 @@ export default {
     change(val) {
       const path = val.path;
       const query = val.query;
-      if(isHttp(val.path)) {
+      if (isHttp(val.path)) {
         // http(s):// 路径新窗口打开
         const pindex = path.indexOf("http");
         window.open(path.substr(pindex, path.length), "_blank");
       } else {
         if (query) {
-          this.$router.push({ path: path, query: JSON.parse(query) });
+          this.$router.push({path: path, query: JSON.parse(query)});
         } else {
           this.$router.push(path)
         }
@@ -113,7 +114,9 @@ export default {
 
       for (const router of routes) {
         // skip hidden router
-        if (router.hidden) { continue }
+        if (router.hidden) {
+          continue
+        }
 
         const data = {
           path: !isHttp(router.path) ? path.resolve(basePath, router.path) : router.path,
@@ -161,14 +164,15 @@ export default {
   background: #F0F0F0;
   border-radius: 10px;
   height: 34px !important;
-  line-height: 0;
+  line-height: 0px;
 
   .search-icon {
     cursor: pointer;
     font-size: 18px;
     vertical-align: middle;
     margin-right: 0;
-    transition:  0.5s ease;
+    transition: 0.5s ease;
+
   }
 
   .header-search-select {
@@ -180,6 +184,7 @@ export default {
     border-radius: 0;
     display: inline-block;
     vertical-align: middle;
+    margin-top: 5px;
 
 
     ::v-deep .el-input__inner {
@@ -198,7 +203,8 @@ export default {
     .header-search-select {
       width: 210px;
     }
-    .search-icon{
+
+    .search-icon {
       margin-right: 10px;
     }
   }
