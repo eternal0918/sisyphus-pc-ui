@@ -31,7 +31,7 @@ export default {
       search: '',
       options: [],
       searchPool: [],
-      show: false,
+      show: true, //搜索框展示
       fuse: undefined
     }
   },
@@ -158,16 +158,22 @@ export default {
 <style lang="scss" scoped>
 .header-search {
   font-size: 0 !important;
+  background: #F0F0F0;
+  border-radius: 10px;
+  height: 34px !important;
+  line-height: 0;
 
   .search-icon {
     cursor: pointer;
     font-size: 18px;
     vertical-align: middle;
+    margin-right: 0;
+    transition:  0.5s ease;
   }
 
   .header-search-select {
     font-size: 18px;
-    transition: width 0.2s;
+    transition:  0.5s ease;
     width: 0;
     overflow: hidden;
     background: transparent;
@@ -175,13 +181,15 @@ export default {
     display: inline-block;
     vertical-align: middle;
 
+
     ::v-deep .el-input__inner {
       border-radius: 0;
       border: 0;
       padding-left: 0;
       padding-right: 0;
       box-shadow: none !important;
-      border-bottom: 1px solid #d9d9d9;
+      background: none;
+      //border-bottom: 1px solid #d9d9d9;
       vertical-align: middle;
     }
   }
@@ -189,7 +197,9 @@ export default {
   &.show {
     .header-search-select {
       width: 210px;
-      margin-left: 10px;
+    }
+    .search-icon{
+      margin-right: 10px;
     }
   }
 }

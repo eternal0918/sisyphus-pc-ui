@@ -2,10 +2,10 @@
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
       <keep-alive :include="cachedViews">
-        <router-view v-if="!$route.meta.link" :key="key" />
+        <router-view v-if="!$route.meta.link" :key="key"/>
       </keep-alive>
     </transition>
-    <iframe-toggle />
+    <iframe-toggle/>
   </section>
 </template>
 
@@ -14,7 +14,7 @@ import iframeToggle from "./IframeToggle/index"
 
 export default {
   name: 'AppMain',
-  components: { iframeToggle },
+  components: {iframeToggle},
   computed: {
     cachedViews() {
       return this.$store.state.tagsView.cachedViews
@@ -49,6 +49,8 @@ export default {
   width: 100%;
   position: relative;
   overflow: hidden;
+  //主体页面背景色
+  background: #F4F5F8;
 }
 
 .fixed-header + .app-main {
