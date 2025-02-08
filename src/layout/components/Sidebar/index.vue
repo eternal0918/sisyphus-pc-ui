@@ -6,14 +6,13 @@
     <el-scrollbar :class="settings.sideTheme" wrap-class="scrollbar-wrapper">
       <!--    隐藏后的侧边栏-->
       <el-menu
-        style="border-radius: 10px"
         :default-active="activeMenu"
         :collapse="isCollapse"
         :background-color="settings.sideTheme === 'theme-dark' ? variables.menuBackground : variables.menuLightBackground"
         :text-color="settings.sideTheme === 'theme-dark' ? variables.menuColor : variables.menuLightColor"
         :unique-opened="true"
         :active-text-color="settings.theme"
-        :collapse-transition="false"
+        :collapse-transition="true"
         mode="vertical"
       >
         <sidebar-item
@@ -59,3 +58,4 @@ export default {
   }
 };
 </script>
+

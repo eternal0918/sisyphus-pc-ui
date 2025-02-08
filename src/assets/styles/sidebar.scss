@@ -5,6 +5,8 @@
     transition: margin-left .28s;
     margin-left: $base-sidebar-width;
     position: relative;
+    background: white;
+    overflow: hidden;
   }
 
   .sidebarHide {
@@ -83,6 +85,7 @@
     .el-submenu__title {
       &:hover {
         background-color: rgba(0, 0, 0, 0.06) !important;
+        border-radius: 10px;
       }
     }
 

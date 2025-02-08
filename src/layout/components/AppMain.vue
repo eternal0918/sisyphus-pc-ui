@@ -51,7 +51,7 @@ export default {
   overflow: hidden;
   //主体页面背景色
   background: #F4F5F8;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
 }
 
 .fixed-header + .app-main {

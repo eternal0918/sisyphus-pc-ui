@@ -8,7 +8,9 @@
         <!--        取消tags标签-->
         <!--        <tags-view v-if="needTagsView"/>-->
       </div>
-      <app-main/>
+      <div style="padding-right: 10px">
+        <app-main/>
+      </div>
       <right-panel>
         <settings/>
       </right-panel>

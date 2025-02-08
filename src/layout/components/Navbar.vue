@@ -9,13 +9,7 @@
     <div class="right-menu">
       <template v-if="device!=='mobile'">
         <search id="header-search" class="right-menu-item"/>
-
-        <el-tooltip content="文档地址" effect="dark" placement="bottom">
-          <ruo-yi-doc id="ruoyi-doc" class="right-menu-item hover-effect"/>
-        </el-tooltip>
-
         <screenfull id="screenfull" class="right-menu-item hover-effect"/>
-
         <el-tooltip content="布局大小" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect"/>
         </el-tooltip>
@@ -25,7 +19,7 @@
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar" class="user-avatar" alt="">
-          <span style="vertical-align: text-bottom;margin-left: 10px;font-size: 15px;font-weight: bold">Sisyphus</span>
+          <span style="vertical-align: text-bottom;margin-left: 10px;font-size: 15px;font-weight: bold;color: black">Sisyphus</span>
           <!--          <i class="el-icon-caret-bottom"/>-->
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -40,6 +34,12 @@
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
+      <div style="display: inline-block;padding:0 10px;">
+        <el-tooltip content="消息" effect="dark" placement="bottom">
+          <i class="el-icon-message-solid" style="font-size: 20px;transform: translate(0px,5px);"></i>
+        </el-tooltip>
+
+      </div>
     </div>
   </div>
 </template>
@@ -114,10 +114,11 @@ export default {
 
 .navbar {
   height: 50px;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   background: #fff;
   //box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  padding-right: 10px;
 
   .hamburger-container {
     line-height: 46px;
@@ -157,6 +158,7 @@ export default {
     }
 
     .right-menu-item {
+      margin-right: 10px;
       display: inline-block;
       padding: 0 8px;
       height: 100%;
@@ -182,10 +184,7 @@ export default {
     }
 
     .avatar-container {
-      margin-right: 30px;
-
       .avatar-wrapper {
-
         position: relative;
 
         .user-avatar {
