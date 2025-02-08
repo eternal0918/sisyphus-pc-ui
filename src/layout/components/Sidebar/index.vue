@@ -59,3 +59,15 @@ export default {
 };
 </script>
 
+<style lang="scss" scoped>
+@import "~@/assets/styles/variables.scss";
+
+.el-menu-item.is-active {
+  background-color: #{$base-hover} !important;
+  color: #fff;
+
+  span {
+    color: black !important;
+  }
+}
+</style>
