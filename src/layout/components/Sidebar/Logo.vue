@@ -61,7 +61,9 @@ export default {
   position: relative;
   width: 100%;
   height: 90px;
-  background: #2b2f3a;
+  //background: #2b2f3a;
+  //设置背景色
+  background: transparent !important;
   text-align: center;
   overflow: hidden;
   line-height: 80px;

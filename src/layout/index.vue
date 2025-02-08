@@ -1,4 +1,5 @@
 <template>
+  <!--  主体背景色设置-->
   <div :class="classObj" class="app-wrapper" :style="{'--current-color': theme}">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
     <sidebar v-if="!sidebar.hide" class="sidebar-container"/>
@@ -74,11 +75,25 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
+  //background: white;
 
   &.mobile.openSidebar {
     position: fixed;
     top: 0;
   }
+}
+
+//模糊背景色块
+.app-wrapper::after {
+  position: absolute;
+  width: 400px; /* 模糊区域的宽度 */
+  height: 200px; /* 模糊区域的高度 */
+  background-color: rgba(168, 132, 224, 0.4); /* 淡紫色 */
+  //border-radius: 50%;
+  filter: blur(100px); /* 高斯模糊效果 */
+  z-index: -1; /* 确保模糊效果在页面内容下方 */
+  top: -100px;
+  left: -50px;
 }
 
 .drawer-bg {

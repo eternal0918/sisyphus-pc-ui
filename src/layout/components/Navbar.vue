@@ -116,8 +116,9 @@ export default {
   height: 50px;
   //overflow: hidden;
   position: relative;
-  background: #fff;
+  //background: #fff;
   //box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  background: transparent !important;
   padding-right: 10px;
 
   .hamburger-container {
@@ -128,8 +129,10 @@ export default {
     transition: background .3s;
     -webkit-tap-highlight-color: transparent;
 
+    //激活颜色
     &:hover {
-      background: #F0F0F0;
+      //background: #F0F0F0;
+      background-color: rgba(0, 0, 0, 0.04) !important;
       border-radius: 10px;
     }
   }

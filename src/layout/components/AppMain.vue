@@ -50,7 +50,8 @@ export default {
   position: relative;
   overflow: hidden;
   //主体页面背景色
-  background: #F4F5F8;
+  //background: #F4F5F8;
+  background: transparent;
   border-radius: 20px 20px 0 0;
 }
 

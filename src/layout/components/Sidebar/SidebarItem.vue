@@ -99,16 +99,16 @@ export default {
 }
 </script>
 
-<!--侧边栏样式修改-->
+<!--侧边栏样式修改（已失效，已经从sidebar.scss文件中设置）-->
 <style lang="scss" scoped>
 @import "~@/assets/styles/variables.scss";
 
 .el-menu-item.is-active {
-  background-color: #{$base-hover} !important;
-  color: #fff;
+  background-color: #{$base-active} !important;
 
   span {
     color: black !important;
   }
 }
 </style>
+
