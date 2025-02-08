@@ -96,6 +96,19 @@ export default {
   left: -50px;
 }
 
+//.app-wrapper::before {
+//  content: "";
+//  position: absolute;
+//  width: 400px; /* 模糊区域的宽度 */
+//  height: 200px; /* 模糊区域的高度 */
+//  background-color: rgba(211, 176, 0, 0.2); /* 淡紫色 */
+//  //border-radius: 50%;
+//  filter: blur(100px); /* 高斯模糊效果 */
+//  z-index: -1; /* 确保模糊效果在页面内容下方 */
+//  top: 100px;
+//  left: 50px;
+//}
+
 .drawer-bg {
   background: #000;
   opacity: 0.3;
