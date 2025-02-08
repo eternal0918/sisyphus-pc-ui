@@ -103,12 +103,14 @@ export default {
 <style lang="scss" scoped>
 @import "~@/assets/styles/variables.scss";
 
-.el-menu-item.is-active {
-  background-color: #{$base-active} !important;
+//.el-menu-item.is-active {
+//  background-color: #{$base-active} !important;
+//
+//  span {
+//    color: black !important;
+//  }
+//}
 
-  span {
-    color: black !important;
-  }
-}
+
 </style>
 

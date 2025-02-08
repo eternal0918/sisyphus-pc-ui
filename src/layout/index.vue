@@ -88,7 +88,8 @@ export default {
   position: absolute;
   width: 400px; /* 模糊区域的宽度 */
   height: 200px; /* 模糊区域的高度 */
-  background-color: rgba(168, 132, 224, 0.4); /* 淡紫色 */
+  //background-color: rgba(168, 132, 224, 0.4); /* 淡紫色 */
+  background: rgba(208, 255, 0, 0.15); /* 淡黄色 */
   //border-radius: 50%;
   filter: blur(100px); /* 高斯模糊效果 */
   z-index: -1; /* 确保模糊效果在页面内容下方 */

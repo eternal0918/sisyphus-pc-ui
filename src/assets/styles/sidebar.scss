@@ -227,6 +227,9 @@
 
   .nest-menu .el-submenu > .el-submenu__title,
   .el-menu-item {
+    //设置子菜单栏里 item 样式
+    background: transparent !important;
+
     &:hover {
       // you can use $subMenuHover
       background-color: rgba(0, 0, 0, 0.06) !important;
@@ -237,9 +240,16 @@
   > .el-menu--popup {
     max-height: 100vh;
     overflow-y: auto;
+    //设置子菜单样式
+    border-radius: 10px;
+    padding: 0 10px;
+    border: 0.5px solid #{$base-hover};
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px);
 
     &::-webkit-scrollbar-track-piece {
-      background: #d3dce6;
+      background: white;
     }
 
     &::-webkit-scrollbar {
@@ -247,7 +257,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #99a9bf;
+      background: #{$base-hover};
       border-radius: 20px;
     }
   }

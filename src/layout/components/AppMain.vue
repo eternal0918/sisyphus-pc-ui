@@ -51,7 +51,9 @@ export default {
   overflow: hidden;
   //主体页面背景色
   //background: #F4F5F8;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.3);
+  //background: rgba(0, 0, 0, 0.02);
+
   border-radius: 20px 20px 0 0;
 }
 
