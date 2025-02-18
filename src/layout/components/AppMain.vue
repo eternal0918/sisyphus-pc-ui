@@ -48,7 +48,7 @@ export default {
   min-height: calc(100vh - 50px);
   width: 100%;
   position: relative;
-  overflow: hidden;
+
   //主体页面背景色
   //background: #F4F5F8;
   background: rgba(255, 255, 255, 0.3);

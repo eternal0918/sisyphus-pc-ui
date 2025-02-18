@@ -121,7 +121,11 @@ aside {
 
 //main-container全局样式
 .app-container {
-  padding: 20px;
+  //设置 滚轮，及底部内边距
+  overflow-y: auto;
+  height: 100vh;
+  padding: 20px 20px 100px;
+  box-sizing: border-box;
 }
 
 .components-container {
