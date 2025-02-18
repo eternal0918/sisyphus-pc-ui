@@ -73,6 +73,7 @@
           <el-form-item style="width:100%;">
             <function-button style="margin:0px 0px 20px 0px;"></function-button>
           </el-form-item>
+<!--          <loader-circular type="1"></loader-circular>-->
         </el-form>
 
         <!--  底部  -->
@@ -90,10 +91,11 @@ import {getCodeImg} from "@/api/login";
 import Cookies from "js-cookie";
 import {encrypt, decrypt} from '@/utils/jsencrypt'
 import FunctionButton from "@/components/FunctionButton/index.vue";
+import LoaderCircular from "@/components/LoaderCircular/index.vue";
 
 export default {
   name: "Login",
-  components: {FunctionButton},
+  components: {FunctionButton, LoaderCircular},
   data() {
     return {
       codeUrl: "",
@@ -281,7 +283,8 @@ export default {
   position: fixed;
   bottom: 10px;
   width: 100%;
-  text-align: center;
+  left: 68%;
+  text-align: left;
   color: grey;
   letter-spacing: 1px;
 }
