@@ -1,7 +1,35 @@
 <template>
-  <div style="width: 300px;height: 180px;background: rgba(0,0,0,0.02);border-radius: 20px">
-    <div ref="seriesGraph" style="width: 100%;height: 100%"/>
+  <div
+    style="background: rgba(0,0,0,0.02);border-radius: 20px;display: flex;flex-direction: column;width: 500px;max-height:300px;padding: 30px;padding-bottom: 0;">
+    <div style="width: 100%;">
+      <el-row type="flex" justify="space-between">
+        <el-col :span="6">
+          <span style="font-size: 18px;">
+            {{ chartTitle }}
+          </span>
+        </el-col>
+        <el-col :span="6" style="text-align: right">
+          <el-button type="primary" icon="el-icon-more"
+                     style="border: none;background:  rgba(0,0,0,0.05);color: black;"/>
+        </el-col>
+      </el-row>
+
+      <div style="display: flex;">
+        <span style="font-weight: bold;font-size: 25px;margin-right: 10px">352,320 元 </span>
+        <el-button icon="el-icon-top-right"
+                   size="small"
+                   style="border: none;background:  #ECFAEE;color: green;padding: 10px;">+23%
+        </el-button>
+      </div>
+      <br>
+      <span
+        style="color: darkgrey;font-weight: bold;font-size: 13px;letter-spacing: 1px">{{subTitle}}</span>
+    </div>
+    <div style="width: 500px;flex: 1">
+      <div ref="seriesGraph" style="width: 100%;height: 100%"/>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -32,6 +60,9 @@ export default {
     },
     endColor: {
       default: '#0010c6',
+    },
+    subTitle:{
+      type: String,
     }
   },
   data() {
@@ -61,23 +92,23 @@ export default {
     initSeriesGraphData() {
       let seriesGraphInit1 = this.seriesGraphInit()
       let seriesGraphData = {
-        title: {
-          text: this.chartTitle,
-          left: 20,
-          top: 20,
-          textStyle: {
-            color: this.chartTitleColor
-          }
-        },
+        // title: {
+        //   text: this.chartTitle,
+        //   left: 20,
+        //   top: 20,
+        //   textStyle: {
+        //     color: this.chartTitleColor
+        //   }
+        // },
 
         tooltip: {
           trigger: 'axis'
         },
         grid: {
-          left: 20,
-          top: 60,
+          left: 0,
+          top: 40,
           bottom: 10,
-          right: 20,
+          right: 0,
           containLabel: true
         },
         xAxis: [{
