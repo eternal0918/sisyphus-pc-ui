@@ -1,6 +1,6 @@
 <template>
   <div
-    style="background: rgba(0,0,0,0.02);border-radius: 20px;display: flex;flex-direction: column;width: 500px;max-height:300px;padding: 30px;padding-bottom: 0;">
+    style="background: rgba(0,0,0,0.02);border-radius: 20px;width: 500px;max-height: 320px;padding: 30px 30px 0;display: flex;flex-direction: column;">
     <div style="width: 100%;">
       <el-row type="flex" justify="space-between">
         <el-col :span="6">
@@ -15,7 +15,9 @@
       </el-row>
 
       <div style="display: flex;">
-        <span style="font-weight: bold;font-size: 25px;margin-right: 10px">352,320 元 </span>
+        <span style="font-weight: bold;font-size: 25px;margin-right: 10px">
+          {{ number }}
+        </span>
         <el-button icon="el-icon-top-right"
                    size="small"
                    style="border: none;background:  #ECFAEE;color: green;padding: 10px;">+23%
@@ -23,7 +25,7 @@
       </div>
       <br>
       <span
-        style="color: darkgrey;font-weight: bold;font-size: 13px;letter-spacing: 1px">{{subTitle}}</span>
+        style="color: darkgrey;font-weight: bold;font-size: 13px;letter-spacing: 1px">{{ subTitle }}</span>
     </div>
     <div style="width: 500px;flex: 1">
       <div ref="seriesGraph" style="width: 100%;height: 100%"/>
@@ -61,7 +63,10 @@ export default {
     endColor: {
       default: '#0010c6',
     },
-    subTitle:{
+    subTitle: {
+      type: String,
+    },
+    number: {
       type: String,
     }
   },
