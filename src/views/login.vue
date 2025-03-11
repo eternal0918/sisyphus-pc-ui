@@ -1,19 +1,21 @@
 <template>
   <div class="login">
-    <div style="display: flex;width: 100%;height: 100%">
+    <div style="display: flex;width: 100%;height: 100%;gap: 40px">
       <!--      左侧banner-->
       <div class="login-banner">
 
       </div>
       <!--右侧登录-->
       <div style="flex: 1;position: relative">
-        <div style="display: flex;margin-left: 50px;">
-          <img src="../assets/logo/logo.png" alt="" style="height: 100px;margin-right: 20px">
-          <h1 style="font-size: 50px;font-weight: bold;">SISYPHUS</h1>
+
+        <div style="display: flex">
+          <img src="../assets/logo/logo.png" alt="" style="height: 100px;">
+          <h1 class="login-title">SISYPHUS</h1>
         </div>
         <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
           <h1>您好，欢迎访问！</h1>
-          <h2 style="color: grey;letter-spacing: 1px">请完善个人信息用以访问Sisyphus管理平台</h2>
+          <br>
+          <h2 style="color: grey;letter-spacing: 1px;font-size: 15px">请完善个人信息用以访问Sisyphus管理平台</h2>
           <br>
           <el-form-item prop="username">
             <el-input class="input-style"
@@ -55,16 +57,24 @@
           </el-form-item>
           <el-checkbox v-model="loginForm.rememberMe" style="margin-bottom: 20px">记住密码</el-checkbox>
           <el-form-item style="width:100%;">
-            <el-button
-              :loading="loading"
-              size="medium"
-              type="primary"
-              style="width:100%;"
-              @click.native.prevent="handleLogin"
-            >
+            <!--            <el-button-->
+            <!--              :loading="loading"-->
+            <!--              size="medium"-->
+            <!--              type="primary"-->
+            <!--              style="width:100%;"-->
+            <!--              @click.native.prevent="handleLogin"-->
+            <!--            >-->
+            <!--              <span v-if="!loading">登 录</span>-->
+            <!--              <span v-else>登 录 中...</span>-->
+            <!--            </el-button>-->
+
+            <button class="btn" @click="handleLogin">
+              <i class="animation"></i>
               <span v-if="!loading">登 录</span>
               <span v-else>登 录 中...</span>
-            </el-button>
+              <i class="animation"></i>
+            </button>
+
             <div style="float: right;" v-if="register">
               <router-link class="link-type" :to="'/register'">立即注册</router-link>
             </div>
@@ -73,7 +83,7 @@
           <el-form-item style="width:100%;">
             <function-button style="margin:0px 0px 20px 0px;"></function-button>
           </el-form-item>
-<!--          <loader-circular type="1"></loader-circular>-->
+          <!--          <loader-circular type="1"></loader-circular>-->
         </el-form>
 
         <!--  底部  -->
@@ -213,6 +223,45 @@ export default {
   //background-size: cover;
 }
 
+.login-title {
+  position: relative;
+  font-size: 120px;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -200px;
+
+    width: 500px;
+    height: 500px;
+    border-radius: 45% 48% 43% 47%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 252, 95, 0.94);
+    animation: rotate 10s infinite linear alternate;
+    z-index: 1;
+    mix-blend-mode: lighten;
+  }
+
+  &::after {
+    border-radius: 43% 47% 44% 48%;
+    animation: rotate 10s infinite .5s linear alternate;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 .login-banner {
   flex: 1;
   height: 100%;
@@ -237,7 +286,7 @@ export default {
   position: absolute;
   top: 35%;
   left: 35%;
-  transform: scale(150%);
+  transform: scale(120%);
 
   .el-input {
     height: 38px;
@@ -283,10 +332,48 @@ export default {
   position: fixed;
   bottom: 10px;
   width: 100%;
-  left: 68%;
+  left: 67.5%;
   text-align: left;
   color: grey;
   letter-spacing: 1px;
 }
 
+
+.btn {
+  width: 100%;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  padding: 10px 20px;
+  color: #fff;
+  letter-spacing: 1.2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .95;
+}
+
+.btn .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
 </style>
