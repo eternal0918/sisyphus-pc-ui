@@ -38,6 +38,8 @@ import VueMeta from 'vue-meta'
 // 字典数据组件
 import DictData from '@/components/DictData'
 import {vAutoAnimate} from "@formkit/auto-animate";
+//  引入图标icon库
+import 'boxicons'
 
 Vue.directive("auto-animate",vAutoAnimate)
 
