@@ -3,9 +3,9 @@
     <div class="container">
       <div class="tabs">
         <input type="radio" id="radio-1" name="tabs" checked="">
-        <label class="tab" for="radio-1">Hello<span class="notification">2</span></label>
+        <label class="tab" for="radio-1">Model<span class="notification">2</span></label>
         <input type="radio" id="radio-2" name="tabs">
-        <label class="tab" for="radio-2">UI</label>
+        <label class="tab" for="radio-2">Lora</label>
         <input type="radio" id="radio-3" name="tabs">
         <label class="tab" for="radio-3">World</label>
         <span class="glider"></span>
@@ -25,7 +25,7 @@ export default {
   display: flex;
   position: relative;
   background-color: #fff;
-  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  //box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
   padding: 0.75rem;
   border-radius: 99px;
 }
@@ -100,7 +100,8 @@ export default {
   display: flex;
   height: 30px;
   width: 50px;
-  background-color: #e6eef9;
+  //background-color: #e6eef9;
+  background: rgba(0, 0, 0, 0.04);
   z-index: 1;
   border-radius: 99px;
   transition: 0.25s ease-out;

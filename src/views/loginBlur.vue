@@ -202,8 +202,10 @@ export default {
         Cookies.remove('rememberMe');
       }
       this.$store.dispatch("Login", this.loginForm).then(() => {
-        this.$router.push({path: this.redirect || "/"}).catch(() => {
-        });
+        setTimeout(() => {
+          this.$router.push({path: this.redirect || "/"}).catch(() => {
+          });
+        }, 3000)
       });
     }
   }

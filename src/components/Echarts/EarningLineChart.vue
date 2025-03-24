@@ -1,6 +1,5 @@
 <template>
-  <div
-    style="background: rgba(0,0,0,0.02);border-radius: 20px;width: 500px;max-height: 320px;padding: 30px 30px 0;display: flex;flex-direction: column;">
+  <div class="chart-container">
     <div style="width: 100%;">
       <el-row type="flex" justify="space-between">
         <el-col :span="6">
@@ -9,29 +8,25 @@
           </span>
         </el-col>
         <el-col :span="6" style="text-align: right">
-          <el-button  icon="el-icon-more"
+          <el-button icon="el-icon-more"
                      style="border: none;background:  rgba(0,0,0,0.05);color: black;border-radius: 10px"/>
         </el-col>
       </el-row>
 
       <div style="display: flex;align-items: center;gap: 10px">
-        <span style="font-weight: bold;font-size: 25px;margin-right: 10px">
+        <span style="font-weight: bold;font-size: 30px;margin-right: 10px">
           {{ number }}
         </span>
-<!--        <el-button icon="el-icon-top-right"-->
-<!--                   size="small"-->
-<!--                   style="border: none;background: #ECFAEE;color: green;padding: 10px;border-radius: 8px;font-weight: bold">+23%-->
-<!--        </el-button>-->
-        <div
-          style="background: #ECFAEE;color: #4BA143;padding: 8px;border-radius: 8px;font-weight: bold;display: flex;align-items: center; gap: 10px">
+        <div class="tips-container">
           <i class='bx bx-trending-up  bx-tada'/>
           <span>+23%</span>
         </div>
       </div>
       <br>
-      <span
-        style="color: darkgrey;font-weight: bold;font-size: 13px;letter-spacing: 1px">{{ subTitle }}</span>
+      <span class="sub-title">{{ subTitle }}</span>
     </div>
+
+
     <div style="width: 500px;flex: 1">
       <div ref="seriesGraph" style="width: 100%;height: 100%"/>
     </div>
@@ -217,6 +212,32 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.chart-container {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 20px;
+  width: 600px;
+  max-height: 400px;
+  padding: 30px 30px 0;
+  display: flex;
+  flex-direction: column;
+}
 
+.tips-container {
+  background: #ECFAEE;
+  color: #4BA143;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.sub-title {
+  color: darkgrey;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px
+}
 </style>
